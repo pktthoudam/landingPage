@@ -1,0 +1,87 @@
+<footer class="text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 my-4">
+                <div class="contact-section text-white">
+                    <h1>
+                        Let's start a <span class="highlight-star">*</span><br />
+                        project together
+                    </h1>
+
+                    <p class="mt-3">
+                        We collaborate closely with our clients to understand their goals,
+                        target audience, and specific needs. Our creative expertise helps us
+                        turn these insights into tailored design solutions.
+                    </p>
+
+                    <div class="contact-info mt-4">
+                        <div class="mb-3">
+                            <span class="text-green fw-bold">Give us a call:</span><br />
+                            <span>(123) 456-7890</span>
+                        </div>
+                        <div>
+                            <span class="text-green fw-bold">Send us an email:</span><br />
+                            <span>edificecms&#64;email.com</span>
+                        </div>
+                    </div>
+
+                    <!-- Social Icons -->
+                    <div class="social-icons mt-4 d-flex gap-3">
+                        <a href="#" aria-label="Twitter" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-md-6 my-4">
+                <h3 class="mb-4 text-start">Send us a message</h3>
+                <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="mx-auto" style="max-width: 600px;">
+                    <input type="text" class="form-control mb-2" formControlName="name" placeholder="Your name">
+                    <div *ngIf="(contactForm.get('name')?.touched || isSubmit) && contactForm.get('name')?.invalid"
+                        class="text-danger mb-2">
+                        Name is required (min 2 characters).
+                    </div>
+
+                    <input type="email" class="form-control mb-2" formControlName="email"
+                        placeholder="Your email address">
+                    <div *ngIf="(contactForm.get('email')?.touched || isSubmit) && contactForm.get('email')?.invalid"
+                        class="text-danger mb-2">
+                        Enter a valid email.
+                    </div>
+
+                    <input type="text" class="form-control mb-2" formControlName="phone" placeholder="Your Phone Number"
+                        maxlength="10" appNumberOnly>
+                    <div *ngIf="(contactForm.get('phone')?.touched || isSubmit) && contactForm.get('phone')?.invalid"
+                        class="text-danger mb-2">
+                        Enter a valid 10-digit phone number.
+                    </div>
+
+                    <textarea class="form-control mb-2 query " formControlName="query" placeholder="Type any queries"
+                        (input)="getLength()" maxlength="150"></textarea>
+                    <div class="textLength">{{textLength}}/150</div>
+                    <div *ngIf="(contactForm.get('query')?.touched || isSubmit) && contactForm.get('query')?.invalid"
+                        class="text-danger mb-2">
+                        Message must be at least 10 characters.
+                    </div>
+
+
+                    <div *ngIf="success" class="text-success">
+                        Sucessfully submited !
+                    </div>
+                    <button type="submit" class="contact-btn w-100">Send message <span class="icon-circle">
+                            <i class="fas fa-arrow-right"></i>
+                        </span></button>
+                </form>
+
+            </div>
+        </div>
+
+        <div class="Copyright">
+            <img src="/Images/logo-company.png" alt="companyLogo" style="height: 20px;">
+            <p class="mt-4">© Copyright 2024. All Rights Reserved by edifice CMS</p>
+        </div>
+    </div>
+</footer>

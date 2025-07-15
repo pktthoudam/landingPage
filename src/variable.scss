@@ -1,0 +1,87 @@
+// desktop
+// 1400px++
+
+$minbigscreen: 1601px;
+
+@mixin bigscreen {
+  @media (min-width: #{$minbigscreen}) {
+    @content;
+  }
+}
+
+$maxdesktop: 1600px;
+$mindesktop: 1400px;
+
+@mixin desktop {
+  @media (max-width: #{$maxdesktop}) and (min-width: #{$mindesktop}) {
+    @content;
+  }
+}
+
+// laptop
+
+$maxlaptop: 1400px;
+$minlaptop: 1200px;
+
+@mixin laptop {
+  @media (max-width:#{$maxlaptop}) and (min-width:#{$minlaptop}) {
+    @content;
+  }
+}
+
+// ipad pro 1
+
+$maxipadpro1: 1199px;
+$minipadpro1: 992px;
+
+@mixin ipadpro1 {
+  @media (max-width:#{$maxipadpro1}) and (min-width:#{$minipadpro1}) {
+    @content;
+  }
+}
+
+// ipad pro
+
+$maxipadpro: 991px;
+$minipadpro: 921px;
+
+@mixin ipadpro {
+  @media (max-width:#{$maxipadpro}) and (min-width:#{$minipadpro}) {
+    @content;
+  }
+}
+
+// ipad
+
+$maxipad: 920px;
+$minipad: 768px;
+
+@mixin ipad {
+  @media (max-width:#{$maxipad}) and (min-width:#{$minipad}) {
+    @content;
+  }
+}
+
+// tablet
+
+$maxtablet: 767px;
+$mintablet: 481px;
+
+@mixin tablet {
+  @media (max-width:#{$maxtablet}) and (min-width:#{$mintablet}) {
+    @content;
+  }
+}
+
+// mobile
+
+$maxmobile: 480px;
+$minmobile: 320px;
+
+@mixin mobile {
+  @media (max-width:#{$maxmobile}) and (min-width:#{$minmobile}) {
+    @content;
+  }
+}
+
+$color-milk: #00b8c0;

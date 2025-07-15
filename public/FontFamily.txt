@@ -1,0 +1,4 @@
+Font family:
+
+Heading 	= Syne
+Paragraph	= Inter
